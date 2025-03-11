@@ -2,6 +2,7 @@ package com.steps;
 
 import com.base.TestBase;
 import com.pages.HomePage;
+import com.util.ReusableLibrary;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
@@ -15,6 +16,7 @@ public class CarCompare extends TestBase{
 
     private static TestBase testBase = new TestBase();
     private static HomePage homePage = new HomePage(driver);
+    private static ReusableLibrary reusableLibrary = new ReusableLibrary(driver);
 
     @BeforeAll
     public static void setUp() {
@@ -50,6 +52,6 @@ public class CarCompare extends TestBase{
 
     @When("Read Car registration from {string} file")
     public void readCarRegistrationFromFile(String inputFileName) {
-
+        System.out.println(reusableLibrary.carRegList);
     }
 }
